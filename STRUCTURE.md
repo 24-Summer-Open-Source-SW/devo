@@ -80,23 +80,3 @@ async function deleteMemo(){}
     function Register(){
     }
     ```
-    
-
-### 3. 뼈대 코드 개발 이슈 생성
-
-- 1. ✅ui - 피그마 ui 이미지
-    
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2559a45c-8974-4d28-968f-5f65fa216b81/ef731a5a-8e14-4e78-9515-67173a107120/Untitled.png)
-    
-- 2. ✅작업 분배
-    
-    ### FE
-    
-    수지 : 회원가입/로그인
-    정주 : 메모장 쓰기 / 메모장 POST
-    지희 : 메모장 열기 / 메모장 DELETE
-    
-    ### BE - 예지
-    
-    회원가입/로그인 데이터베이스 구축
-    깃허브 이슈 받아오기

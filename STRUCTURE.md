@@ -1,6 +1,6 @@
 ### 1. 프로그램 간략한 구조 스케치 - 피그잼 워크플로우
 
-![워크플로우.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/2559a45c-8974-4d28-968f-5f65fa216b81/8732fbe8-e062-4f08-837c-26d272acb8e4/%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0.png)
+<img width="839" alt="image" src="https://github.com/24-Summer-Open-Source-SW/devo/assets/126383608/656a36ec-6f72-42fe-aa1c-860ed3aaed8c">
 
 ### 2. 객체, 절차, 함수의 이름 나열 + 간단한 설명
 

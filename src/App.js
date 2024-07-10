@@ -1,0 +1,21 @@
+import './App.css';
+import { Route, Router } from 'react-router-dom';
+import Main from './pages/main';
+import Join from './pages/join';
+import AddMemo from './pages/addMemo';
+import DetailedMemo from './pages/detailedMemo';
+
+function App() {
+  return (
+    <>
+    <Router>
+      <Route path="/" element={<Main/>}/>
+      <Route path="/join" element={<Join/>}/>
+      <Route path="/addmemo" element={<AddMemo/>}/>
+      <Route path="/detailedmemo" element={<DetailedMemo/>}/>
+    </Router>
+    </>
+  );
+}
+
+export default App;

@@ -68,13 +68,15 @@ const InputBox = styled.div`
 `;
 
 const InputArea = styled.input`
-  padding: 8px 12px;
+  padding: 8px 17px;
   background-color: #ededed;
   border: none;
   border-radius: 30px;
   font-size: 16px;
   width: 400px;
   height: 65px;
+
+  outline: none;
 `;
 
 const ButtonBox = styled.div`
@@ -95,7 +97,7 @@ const LoginButton = styled.button`
   width: 350px;
   height: 65px;
   &:hover {
-    background-color: #0056b3;
+    background-color: #30BEFB;
   }
 `;
 
@@ -114,6 +116,9 @@ const GoToSignupButton = styled.button`
   display: flex;
   flex-direction: row;
   padding: 1px;
+  &:hover{
+    color:#30BEFB;
+  }
 `;
 
 const IconsBox = styled.div`

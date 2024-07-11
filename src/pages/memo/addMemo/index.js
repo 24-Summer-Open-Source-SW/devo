@@ -2,8 +2,6 @@ import styled from "styled-components";
 import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
 
-
-
 function AddMemo() {
     const [memoTitle, setMemoTitle] = useState('')
     const [memoContents, setMemoContents] =useState('')
@@ -42,12 +40,14 @@ function AddMemo() {
                     <p>이슈 내용</p>
                     <p>이슈 내용</p>
                 </IssueBox>
-                <TitleInput
-                    onChange={handleTitle}
-                    placeholder={'메모장 이름을 입력해 주세요.'}/>
-                <ContentsInput
-                    onChange={handleContents}
-                    placeholder={'메모장 내용을 입력해 주세요.'}/>
+                <InputBox>
+                    <TitleInput
+                        onChange={handleTitle}
+                        placeholder={'메모장 이름을 입력해 주세요.'}/>
+                    <ContentsInput
+                        onChange={handleContents}
+                        placeholder={'메모장 내용을 입력해 주세요.'}/>
+                </InputBox>
                 <AddBtn onClick={handleSubmit}>
                     add
                 </AddBtn>
@@ -66,8 +66,6 @@ const Wrapper = styled.div`
 const Container = styled.div`
     display: flex;
     justify-content: center;
-    /* flex-wrap: wrap;
-    gap: 2vw; */
     
 `;
 const MainBtn = styled.div`
@@ -84,21 +82,25 @@ const MainBtn = styled.div`
     }
 `;
 const ContentsBox = styled.div`
-    width: 1031px;
-    height: 641px;
+    /* width: 1031px;
+    height: 641px; */
+
+    width: 60%;
     background: #30BEFB4D;
     border-radius: 35px;
     padding: 35px;
-
+    display: flex;
+    flex-direction:column;
     align-items: center;
     justify-content: space-between;
 
-    /* flex-wrap: wrap;
-    gap: 1vw; */
+    flex-wrap: wrap;
+    gap: 1.5vw;
 `;
 const IssueBox = styled.div`
     padding: 20px;
     width: 100%;
+    /* height: 30%; */
     background: white;
     border-radius: 35px;
     text-align: left;
@@ -108,12 +110,22 @@ const IssueBox = styled.div`
         margin: 2px;
     }
 `;
+const InputBox=styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+    gap: 0.7vw;
+    width: 100%;
+
+`;
 const AddBtn = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin: auto 0 0 auto;
+    margin: 0 0 0 auto;
     padding-right: 40px;
     padding-left: 40px;
     padding-top: 10px;
@@ -133,7 +145,7 @@ const TitleInput = styled.input`
 
     border-radius: 35px ;
     border: solid 5px #6CD3FF;
-    padding: 15px;
+    padding: 17px;
 
     background: #EDF9FF;
     color: #2B7697;
@@ -143,17 +155,21 @@ const TitleInput = styled.input`
     padding-left: 16px;
 `;
 const ContentsInput = styled.textarea`
+    /* padding-left: 16px; */
+    padding: 17px;
+    
     width: 100%;
     min-height: 147px ;
+
     border-radius: 35px ;
     border: solid 5px #6CD3FF;
-    margin-bottom: 20px;
-    background: #EDF9FF;
+    
     color: #2B7697;
+    background: #EDF9FF;
     font-size: 35px;
     font-weight: 400;
+    
     outline: none;
-    padding-left: 16px;
     resize: none;
     overflow: scroll;
     ::-webkit-scrollbar {

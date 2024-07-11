@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import JoinItems from "../../components/join/JoinItems";
 
@@ -5,12 +6,16 @@ function Join() {
     return (
       <>
         <MainBox>
-          <ServiceTitle>
-            Devo
-          </ServiceTitle>
-          <ServiceIntro>
-            developer_memo.
-          </ServiceIntro>
+          <Link to='/'>
+            <div className="header">
+              <ServiceTitle>
+                Devo
+              </ServiceTitle>
+              <ServiceIntro>
+                developer_memo.
+              </ServiceIntro>
+            </div>
+          </Link>
           <JoinItems/>
         </MainBox>
       </>
@@ -42,4 +47,10 @@ function Join() {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  .header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   `

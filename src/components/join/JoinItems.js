@@ -113,6 +113,7 @@ const InputArea = styled.input`
   font-size: 16px;
   width: 400px;
   height: 65px;
+  outline: none;
 `;
 
 const ButtonBox = styled.div`
@@ -132,8 +133,8 @@ const JoinButton = styled.button`
   cursor: pointer;
   width: 350px;
   height: 65px;
-  &:hover {
-    color: #0056b3;
+  &:hover{
+    color:#30BEFB;
   }
 `;
 

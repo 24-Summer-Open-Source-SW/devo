@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import Header from '../../components/Header';
 import MemoIssue from '../../components/detailedMemo/MemoIssue';
 import MemoContent from '../../components/detailedMemo/MemoContent';
 
@@ -9,21 +10,7 @@ const Container=styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  flex-wrap: wrap;
-  gap: 5vw;
-`;
-const Header=styled.div`
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right:25px;
-  padding-left: 25px;
-
-  color: black;
-  font-size: 35px;
-  font-weight: 700;
-  background-color: #D4D4D4;
-  border-radius: 50px;
+  justify-content: space-around;
 `;
 const MemoContainer=styled.div`
   display: flex;
@@ -43,9 +30,12 @@ const MemoImage=styled.div`
   flex-wrap: wrap;
   gap: 2vw;
   
-  color: black;
-  font-weight: 700;
-  font-size: 35px;
+  
+  p{
+    color: black;
+    font-weight: 700;
+    font-size: 35px;
+  }
 
   img{
     width: 175px;
@@ -59,7 +49,7 @@ const MemoDetail=styled.div`
   flex-wrap: wrap;
   gap: 20px;
 
-  width: 60%;
+  width: 75%;
   
   color: #2B7697;
   font-size: 35px;
@@ -86,7 +76,7 @@ const MemoDeleteButton=styled.button`
   background-color: #EA596E;
   border-radius: 55px;
 
-  width: 25%;
+  /* width: 20%; */
 
   &:hover{
     font-weight: bold;
@@ -95,19 +85,21 @@ const MemoDeleteButton=styled.button`
   }
 `;
 function DetailedMemo() {
-    return (
+  let testName=localStorage.getItem('memoTitle');
+  let testMemo=localStorage.getItem('memoContents');  
+  return (
       <>
         <Container>
-          <Header>Dev_Memo</Header>
+          <Header />
           <MemoContainer>
             <MemoImage>
               <img src={Memo} />
-              메모이름
+              <p>{testName}</p>
             </MemoImage>
             <MemoDetail>
               <p id='detailHeader'>issue</p>  
-              <MemoIssue content='issue test text 입니다~' />
-              <MemoContent content='test text입니다~' />
+              <MemoIssue issueContent='issue test text 입니다~' />
+              <MemoContent memoContent={testMemo} />
               <MemoDeleteButton>delete</MemoDeleteButton>
             </MemoDetail>
           </MemoContainer>

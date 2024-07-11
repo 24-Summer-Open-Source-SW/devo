@@ -1,32 +1,32 @@
 import styled from "styled-components";
-import {useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
-import Header from "../../components/Header";
+import {useState} from "react";
+
+
 
 function AddMemo() {
-    const [values, setValues] = useState({
-        title:'',
-        contents:'',
-    })
-
+    const [memoTitle, setMemoTitle] = useState('')
+    const [memoContents, setMemoContents] =useState('')
     let navigate = useNavigate()
 
-    const handleChange =(e)=>{
-        const {name, value} = e.target;
-        setValues((prevValues)=>({
-            ...prevValues,
-            [name]:value,
-        }))
+    const handleTitle = (e)=>{
+        setMemoTitle(e.target.value)
+    }
+
+    const handleContents =(e)=>{
+        setMemoContents(e.target.value)
     }
 
     const  handleSubmit =()=>{
-        navigate('/')
+        navigate('/memo')
+        localStorage.setItem('memoTitle', memoTitle);
+        localStorage.setItem('memoContents', memoContents);
     }
 
   return (
     <>
         <Wrapper>
-            <Link to={'/'}>
+            <Link to={'/memo'}>
                 <MainBtn>
                     <p>
                         Dev_memo
@@ -44,18 +44,12 @@ function AddMemo() {
                 </IssueBox>
                 <InputWrap>
                 <TitleInput
-                    id={'title'}
-                    name={'title'}
-                    value={values.title}
-                    onChange={handleChange}
+                    onChange={handleTitle}
                     placeholder={'메모장 이름을 입력해 주세요.'}/>
                 </InputWrap>
                 <InputWrap>
                     <ContentsInput
-                        id={'contents'}
-                        name={'contents'}
-                        value={values.contents}
-                        onChange={handleChange}
+                        onChange={handleContents}
                         placeholder={'메모장 내용을 입력해 주세요.'}/>
                 </InputWrap>
                 <BtnBox>
@@ -177,4 +171,9 @@ const ContentsInput = styled.textarea`
     padding-left: 16px;
     resize: none;
     overflow: scroll;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
 `

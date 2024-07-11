@@ -7,14 +7,14 @@ function Header() {
     return (
         <Wrapper>
                 <BtnBox>
-                    <Link to={'/addmemo'}>
+                    <Link to={'/memo/add'}>
                         <AddBtn>
                             <p>
                                 ADD memo
                             </p>
                         </AddBtn>
                     </Link>
-                    <Link to={'/'}>
+                    <Link to={'/memo'}>
                         <MainBtn>
                             <p>
                                 Dev_memo

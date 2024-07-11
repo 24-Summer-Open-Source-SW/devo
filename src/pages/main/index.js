@@ -9,7 +9,7 @@ function Main() {
             Devo
           </ServiceTitle>
           <ServiceIntro>
-            developer_memo
+            developer_memo.
           </ServiceIntro>
           <LoginItems/>
         </MainBox>

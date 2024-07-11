@@ -29,7 +29,7 @@ function LoginItems() {
       <LoginBox>
         <InputBox>
           <p>ID</p>
-          <InputArea id="inputArea" type="text" placeholder="아이디를 입력해주세요" />
+          <InputArea id="inputArea" type="text" placeholder="ID를 입력해주세요" />
         </InputBox>
         <ButtonBox>
           <LoginButton onClick={handleLogin}>Login</LoginButton>

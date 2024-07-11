@@ -39,7 +39,7 @@ function JoinItems() {
           <InputArea
             id="inputArea"
             type="text"
-            placeholder="아이디를 입력해주세요"
+            placeholder="ID를 입력해주세요"
             value={id}
             onChange={(e) => setId(e.target.value)}
           />
@@ -49,7 +49,7 @@ function JoinItems() {
           <InputArea
             id="inputArea"
             type="text"
-            placeholder="repository issue URL을 입력해주세요."
+            placeholder="Repository issue URL을 입력해주세요."
             value={url}
             onChange={(e) => setUrl(e.target.value)}
           />

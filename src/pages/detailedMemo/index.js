@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import ReactMarkdown from'react-markdown';
+
 
 import Header from '../../components/Header';
 import MemoIssue from '../../components/detailedMemo/MemoIssue';
@@ -67,8 +69,9 @@ const MemoDeleteButton=styled.button`
   }
 `;
 function DetailedMemo() {
-  let testName=localStorage.getItem('memoTitle');
-  let testMemo=localStorage.getItem('memoContents');
+  let Name=localStorage.getItem('memoTitle');
+  let Memo=localStorage.getItem('memoContents');
+  let Issue=localStorage.getItem('memoIssue');
   const navigate=useNavigate()
   
   const deleteMemo = () => {
@@ -78,17 +81,21 @@ function DetailedMemo() {
     alert('메모가 삭제되었습니다.')
     navigate('/memo')
   };
+  const mdIssueContents=`${Issue}`;
 
   return (
       <>
         <Container>
           <Header />
           <MemoContainer>
-            <MemoIcon testName={testName}/>
+            <MemoIcon testName={Name}/>
             <MemoDetail>
-              <p id='detailHeader'>issue</p>  
-              <MemoIssue issueContent='issue test text 입니다~' />
-              <MemoContent memoContent={testMemo} />
+              <p id='detailHeader'>issue</p>
+              <ReactMarkdown>
+                {mdIssueContents}
+              </ReactMarkdown>
+              <MemoIssue issueContent={Issue} />
+              <MemoContent memoContent={Memo} />
               <MemoDeleteButton
                 onClick={deleteMemo}
               >delete</MemoDeleteButton>

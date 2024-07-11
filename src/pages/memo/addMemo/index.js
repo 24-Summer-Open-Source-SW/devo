@@ -1,14 +1,20 @@
 import styled from "styled-components";
 import {Link, useNavigate} from "react-router-dom";
-import {useState} from "react";
+import ReactMarkdown from'react-markdown';
+import React, {useState} from "react";
 
 function AddMemo() {
     const [memoTitle, setMemoTitle] = useState('')
+    const [memoIssue,setMemoIssue] = useState('')
     const [memoContents, setMemoContents] =useState('')
     let navigate = useNavigate()
 
     const handleTitle = (e)=>{
         setMemoTitle(e.target.value)
+    }
+
+    const handleIssue = (e)=>{
+        setMemoIssue(e.target.value)
     }
 
     const handleContents =(e)=>{
@@ -18,8 +24,12 @@ function AddMemo() {
     const  handleSubmit =()=>{
         navigate('/memo')
         localStorage.setItem('memoTitle', memoTitle);
+        localStorage.setItem('memoIssue',memoIssue)
         localStorage.setItem('memoContents', memoContents);
     }
+    
+    const issueContents=localStorage.getItem('memoIssue');
+    const mdIssueContents=`${issueContents}`;
 
   return (
     <>
@@ -34,16 +44,20 @@ function AddMemo() {
         </Wrapper>
         <Container>
             <ContentsBox>
-                <IssueBox>
+                {/* <IssueBox>
                     <p>이슈 내용</p>
                     <p>이슈 내용</p>
                     <p>이슈 내용</p>
                     <p>이슈 내용</p>
-                </IssueBox>
+                </IssueBox> */}
                 <InputBox>
                     <TitleInput
                         onChange={handleTitle}
                         placeholder={'메모장 이름을 입력해 주세요.'}/>
+                    <IssueInput 
+                            onChange={handleIssue}
+                            placeholder={'이슈를 입력해주세요.'}
+                        />
                     <ContentsInput
                         onChange={handleContents}
                         placeholder={'메모장 내용을 입력해 주세요.'}/>
@@ -66,7 +80,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
     display: flex;
     justify-content: center;
-    
+    font-size: 15px;
 `;
 const MainBtn = styled.div`
     background:#D4D4D4;
@@ -97,19 +111,19 @@ const ContentsBox = styled.div`
     flex-wrap: wrap;
     gap: 1.5vw;
 `;
-const IssueBox = styled.div`
-    padding: 20px;
-    width: 100%;
-    /* height: 30%; */
-    background: white;
-    border-radius: 35px;
-    text-align: left;
-    p{
-        font-size: 35px;
-        font-weight: 800;
-        margin: 2px;
-    }
-`;
+// const IssueBox = styled.div`
+//     padding: 20px;
+//     width: 100%;
+//     /* height: 30%; */
+//     background: white;
+//     border-radius: 35px;
+//     text-align: left;
+//     p{
+//         font-size: 35px;
+//         font-weight: 800;
+//         margin: 2px;
+//     }
+// `;
 const InputBox=styled.div`
     display: flex;
     flex-direction: column;
@@ -119,6 +133,7 @@ const InputBox=styled.div`
     gap: 0.7vw;
     width: 100%;
 
+    font-size: 20px;
 `;
 const AddBtn = styled.button`
     display: flex;
@@ -149,11 +164,38 @@ const TitleInput = styled.input`
 
     background: #EDF9FF;
     color: #2B7697;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 400;
     outline: none;
     padding-left: 16px;
 `;
+
+const IssueInput = styled.textarea`
+    /* padding-left: 16px; */
+    padding: 17px;
+    
+    width: 100%;
+    min-height: 200px ;
+
+    border-radius: 35px ;
+    border: solid 5px #6CD3FF;
+    
+    color: #2B7697;
+    background: #EDF9FF;
+
+    font-size: 25px;
+    font-weight: 400;
+    
+    outline: none;
+    resize: none;
+    overflow: scroll;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+`;
+
 const ContentsInput = styled.textarea`
     /* padding-left: 16px; */
     padding: 17px;
@@ -166,7 +208,8 @@ const ContentsInput = styled.textarea`
     
     color: #2B7697;
     background: #EDF9FF;
-    font-size: 35px;
+
+    font-size: 25px;
     font-weight: 400;
     
     outline: none;

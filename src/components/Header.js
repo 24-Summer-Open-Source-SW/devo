@@ -1,38 +1,42 @@
-import styled from "styled-components";
-import {Link} from "react-router-dom";
 
+import styled from "styled-components";
+import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
 
-    return (
-        <Wrapper>
-                <BtnBox>
-                    <Link to={'/memo/add'}>
-                        <AddBtn>
-                            <p>
-                                ADD memo
-                            </p>
-                        </AddBtn>
-                    </Link>
-                    <Link to={'/memo'}>
-                        <MainBtn>
-                            <p>
-                                Dev_memo
-                            </p>
-                        </MainBtn>
-                    </Link>
-                    <LogoutBtn>
-                        <p>
-                            Logout
-                        </p>
-                    </LogoutBtn>
-                </BtnBox>
-        </Wrapper>
+  const handleLogout = () => {
+    // 로컬 스토리지에 저장된 로그인 이력 삭제
+    localStorage.removeItem("loginId");
+    console.log("로그인 이력이 삭제되었습니다.");
+    console.log("현재 로그인 ID:", localStorage.getItem("loginId"));
+    // "/" 경로로 이동
+    navigate("/");
+  };
 
-    );
+  return (
+    <Wrapper>
+      <BtnBox>
+        <Link to={"/memo/add"}>
+          <AddBtn>
+            <p>ADD memo</p>
+          </AddBtn>
+        </Link>
+        <Link to={"/memo"}>
+          <MainBtn>
+            <p>Dev_memo</p>
+          </MainBtn>
+        </Link>
+        <LogoutBtn onClick={handleLogout}>
+          <p>Logout</p>
+        </LogoutBtn>
+      </BtnBox>
+    </Wrapper>
+  );
 }
 
 export default Header;
+
 const Wrapper = styled.div`
     display: flex;
     justify-content: center;

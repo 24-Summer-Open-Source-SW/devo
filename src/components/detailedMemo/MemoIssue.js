@@ -8,12 +8,12 @@ const Content=styled.div`
   border-radius: 35px;
 `;
 
-function MemoIssue({content}){
+function MemoIssue({issueContent}){
 
     return(
         <>
             <Content>
-                {content}
+                {issueContent}
             </Content>
         </>
     )

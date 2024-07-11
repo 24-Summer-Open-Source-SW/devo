@@ -42,21 +42,15 @@ function AddMemo() {
                     <p>이슈 내용</p>
                     <p>이슈 내용</p>
                 </IssueBox>
-                <InputWrap>
                 <TitleInput
                     onChange={handleTitle}
                     placeholder={'메모장 이름을 입력해 주세요.'}/>
-                </InputWrap>
-                <InputWrap>
-                    <ContentsInput
-                        onChange={handleContents}
-                        placeholder={'메모장 내용을 입력해 주세요.'}/>
-                </InputWrap>
-                <BtnBox>
-                    <AddBtn onClick={handleSubmit}>
-                        ADD
-                    </AddBtn>
-                </BtnBox>
+                <ContentsInput
+                    onChange={handleContents}
+                    placeholder={'메모장 내용을 입력해 주세요.'}/>
+                <AddBtn onClick={handleSubmit}>
+                    add
+                </AddBtn>
             </ContentsBox>
         </Container>
     </>
@@ -68,14 +62,14 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     padding: 60px;
-`
-
+`;
 const Container = styled.div`
     display: flex;
     justify-content: center;
-    padding: 50px;
+    /* flex-wrap: wrap;
+    gap: 2vw; */
     
-`
+`;
 const MainBtn = styled.div`
     background:#D4D4D4;
     padding: 10px;
@@ -88,27 +82,24 @@ const MainBtn = styled.div`
         font-size: 35px;
         padding: 5px;
     }
-
-`
-
-
-
+`;
 const ContentsBox = styled.div`
     width: 1031px;
     height: 641px;
     background: #30BEFB4D;
     border-radius: 35px;
-    padding: 20px;
-    text-align: center;
-`
+    padding: 35px;
 
+    align-items: center;
+    justify-content: space-between;
 
-
+    /* flex-wrap: wrap;
+    gap: 1vw; */
+`;
 const IssueBox = styled.div`
-    margin: 20px;
     padding: 20px;
+    width: 100%;
     background: white;
-    width: 949px;
     border-radius: 35px;
     text-align: left;
     p{
@@ -116,49 +107,43 @@ const IssueBox = styled.div`
         font-weight: 800;
         margin: 2px;
     }
-`
-
-
-const BtnBox = styled.div`
-    display: flex;
-    justify-content: end;
-    padding: 20px;
-    
-`
-
+`;
 const AddBtn = styled.button`
-    background: #30BEFB;
-    width: 145px;
-    height: 54px;
-    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto 0 0 auto;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    color: white;
     font-size: 35px;
     font-weight: 700;
-    color: white;
     
-    
-
-
-`
-const InputWrap = styled.div`
-
-`
+    background: #30BEFB;
+    border-radius: 35px;
+    border: none;
+`;
 
 const TitleInput = styled.input`
-    width: 949px;
-    height: 65px;
+    width: 100%;
+
     border-radius: 35px ;
     border: solid 5px #6CD3FF;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding: 15px;
+
     background: #EDF9FF;
     color: #2B7697;
     font-size: 35px;
     font-weight: 400;
     outline: none;
     padding-left: 16px;
-`
+`;
 const ContentsInput = styled.textarea`
-    width: 949px;
+    width: 100%;
     min-height: 147px ;
     border-radius: 35px ;
     border: solid 5px #6CD3FF;
@@ -176,4 +161,4 @@ const ContentsInput = styled.textarea`
     }
     -ms-overflow-style: none;  
     scrollbar-width: none;
-`
+`;

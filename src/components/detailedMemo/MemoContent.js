@@ -8,12 +8,12 @@ const Content=styled.div`
   color: #2B7697;
   font-size: 35px;
 `;
-function MemoContent({ content }){
+function MemoContent({ memoContent }){
 
     return(
         <>
             <Content>
-                {content}
+                {memoContent}
             </Content>
         </>
     )

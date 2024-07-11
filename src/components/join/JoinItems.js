@@ -1,8 +1,32 @@
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { BsCheckCircleFill } from "react-icons/bs";
+import { useState } from "react";
 
 function JoinItems() {
+  const [id, setId] = useState("");
+  const [url, setUrl] = useState("");
+  const navigate = useNavigate();
+
+  const handleJoin = () => {
+    if (id === "" || url === "") {
+      alert("모든 칸을 채워주세요.");
+      return;
+    }
+
+    // localStorage에 회원가입 정보 저장
+    localStorage.setItem("id", id);
+    localStorage.setItem("url", url);
+
+    // localStorage에 저장된 내용을 콘솔로그로 출력
+    console.log("localStorage에 저장된 내용:");
+    console.log("id:", localStorage.getItem("id"));
+    console.log("url:", localStorage.getItem("url"));
+
+    // 회원가입 완료 후 페이지 이동
+    navigate("/");
+  };
+
   return (
     <>
       <JoinBox>
@@ -12,6 +36,8 @@ function JoinItems() {
             id="inputArea"
             type="text"
             placeholder="아이디를 입력해주세요"
+            value={id}
+            onChange={(e) => setId(e.target.value)}
           />
         </InputBox>
         <InputBox>
@@ -20,10 +46,12 @@ function JoinItems() {
             id="inputArea"
             type="text"
             placeholder="repository issue URL을 입력해주세요."
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
           />
         </InputBox>
         <ButtonBox>
-          <JoinButton>
+          <JoinButton onClick={handleJoin}>
             <IconsBox>
               <BsCheckCircleFill />
             </IconsBox>

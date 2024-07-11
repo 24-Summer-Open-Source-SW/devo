@@ -1,10 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Header from '../../components/Header';
 import MemoIssue from '../../components/detailedMemo/MemoIssue';
 import MemoContent from '../../components/detailedMemo/MemoContent';
+import MemoIcon from '../../components/MemoIcon';
 
-import Memo from '../../images/memo.png';
+// import Memo from '../../images/memo.png';
 
 const Container=styled.div`
   display: flex;
@@ -21,27 +23,7 @@ const MemoContainer=styled.div`
 
   width: 100%;
   `;
-const MemoImage=styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
 
-  flex-wrap: wrap;
-  gap: 2vw;
-  
-  
-  p{
-    color: black;
-    font-weight: 700;
-    font-size: 35px;
-  }
-
-  img{
-    width: 175px;
-    height: 175px;
-  }
-  `;
 const MemoDetail=styled.div`
   display: flex;
   flex-direction: column;
@@ -86,21 +68,30 @@ const MemoDeleteButton=styled.button`
 `;
 function DetailedMemo() {
   let testName=localStorage.getItem('memoTitle');
-  let testMemo=localStorage.getItem('memoContents');  
+  let testMemo=localStorage.getItem('memoContents');
+  const navigate=useNavigate()
+  
+  const deleteMemo = () => {
+    localStorage.removeItem('memoTitle');
+    localStorage.removeItem('memoContents');
+    // 추가적으로 페이지를 리로드하거나 다른 동작을 수행할 수 있습니다.
+    alert('메모가 삭제되었습니다.')
+    navigate('/memo')
+  };
+
   return (
       <>
         <Container>
           <Header />
           <MemoContainer>
-            <MemoImage>
-              <img src={Memo} />
-              <p>{testName}</p>
-            </MemoImage>
+            <MemoIcon testName={testName}/>
             <MemoDetail>
               <p id='detailHeader'>issue</p>  
               <MemoIssue issueContent='issue test text 입니다~' />
               <MemoContent memoContent={testMemo} />
-              <MemoDeleteButton>delete</MemoDeleteButton>
+              <MemoDeleteButton
+                onClick={deleteMemo}
+              >delete</MemoDeleteButton>
             </MemoDetail>
           </MemoContainer>
         </Container>

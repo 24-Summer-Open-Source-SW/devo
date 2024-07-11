@@ -1,5 +1,5 @@
 import './App.css';
-import {Route, Router, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import Main from './pages/main';
 import Join from './pages/join';
 import AddMemo from './pages/addMemo';

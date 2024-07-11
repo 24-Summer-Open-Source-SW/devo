@@ -1,12 +1,11 @@
-import { useState } from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
+
 
 function Header() {
 
     return (
         <Wrapper>
-            <ContentsBox>
                 <BtnBox>
                     <Link to={'/addmemo'}>
                         <AddBtn>
@@ -28,7 +27,6 @@ function Header() {
                         </p>
                     </LogoutBtn>
                 </BtnBox>
-            </ContentsBox>
         </Wrapper>
 
     );
@@ -38,14 +36,11 @@ export default Header;
 const Wrapper = styled.div`
     display: flex;
     justify-content: center;
-    margin: 30px;
+    padding: 60px;
 `
-const ContentsBox =styled.div`
-`
-
 const BtnBox =styled.div`
     display: flex;
-    gap: 200px;
+    gap: 250px;
 `
 const LogoutBtn = styled.div`
     background:#EA596E;

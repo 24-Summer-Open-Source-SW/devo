@@ -91,9 +91,6 @@ function DetailedMemo() {
             <MemoIcon testName={Name}/>
             <MemoDetail>
               <p id='detailHeader'>issue</p>
-              <ReactMarkdown>
-                {mdIssueContents}
-              </ReactMarkdown>
               <MemoIssue issueContent={Issue} />
               <MemoContent memoContent={Memo} />
               <MemoDeleteButton

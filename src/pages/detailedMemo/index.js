@@ -49,7 +49,7 @@ const MemoDetail=styled.div`
 
 const MemoDeleteButton=styled.button`
   margin: auto 0 0 auto;
-
+  width: 165px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right:25px;
@@ -91,10 +91,12 @@ function DetailedMemo() {
             <MemoIcon testName={Name}/>
             <MemoDetail>
               <p id='detailHeader'>issue</p>
-              <MemoIssue issueContent={Issue} />
-              <MemoContent memoContent={Memo} />
+              <div>
+                <MemoIssue issueContent={Issue} />
+                <MemoContent memoContent={Memo} />
+              </div>
               <MemoDeleteButton
-                onClick={deleteMemo}
+                  onClick={deleteMemo}
               >delete</MemoDeleteButton>
             </MemoDetail>
           </MemoContainer>

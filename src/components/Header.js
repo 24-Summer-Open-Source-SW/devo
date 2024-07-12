@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -19,16 +18,16 @@ function Header() {
       <BtnBox>
         <Link to={"/memo/add"}>
           <AddBtn>
-            <p>ADD memo</p>
+            ADD memo
           </AddBtn>
         </Link>
         <Link to={"/memo"}>
           <MainBtn>
-            <p>Dev_memo</p>
+            Dev_memo
           </MainBtn>
         </Link>
         <LogoutBtn onClick={handleLogout}>
-          <p>Logout</p>
+          Logout
         </LogoutBtn>
       </BtnBox>
     </Wrapper>
@@ -46,48 +45,36 @@ const BtnBox =styled.div`
     display: flex;
     gap: 250px;
 `
-const LogoutBtn = styled.div`
-    background:#EA596E;
-    color: white;
-    padding: 10px;
-    width:250px;
-    height: 65px;
-    border-radius: 30px;
-    text-align: center;
-    p{
-        font-weight: 800;
-        font-size: 35px;
-        padding: 5px;
-    }
-`
-
-const MainBtn = styled.div`
-    background:#D4D4D4;
-    padding: 10px;
-    width:250px;
-    height: 65px;
-    border-radius: 30px;
-    text-align: center;
-    p{
-        font-weight: 800;
-        font-size: 35px;
-        padding: 5px;
-    }
+const LogoutBtn = styled.button`
+  background:#EA596E;
+  color: white;
+  width:250px;
+  height: 65px;
+  border-radius: 30px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 35px;
 
 `
 
-const AddBtn = styled.div`
-    background:#30BEFB;
-    padding: 10px;
-    width:250px;
-    height: 65px;
-    border-radius: 30px;
-    text-align: center;
-    color: white;
-    p{
-        font-weight: 800;
-        font-size: 35px;
-        padding: 5px;
-    }
+const MainBtn = styled.button`
+  background:#D4D4D4;
+  width:250px;
+  height: 65px;
+  border-radius: 30px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 35px;
+`
+
+const AddBtn = styled.button`
+  background:#30BEFB;
+  color: white;
+  width:250px;
+  height: 65px;
+  border-radius: 30px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 35px;
 
 `

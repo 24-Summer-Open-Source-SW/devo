@@ -60,7 +60,7 @@ const InputBox = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-  margin-top: 9rem;
+  margin-top: 5rem;
   p {
     font-weight: 900;
     font-size: 35px;
@@ -75,14 +75,13 @@ const InputArea = styled.input`
   font-size: 16px;
   width: 400px;
   height: 65px;
-
   outline: none;
 `;
 
 const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 8rem;
+  margin-top: 5rem;
 `;
 
 const LoginButton = styled.button`
@@ -105,7 +104,7 @@ const LinkBox = styled.div`
   display: flex;
   flex-direction: row;
   gap:3vw;
-  margin-top: 8rem;
+  margin-top: 3rem;
   text-align: center;
 `;
 

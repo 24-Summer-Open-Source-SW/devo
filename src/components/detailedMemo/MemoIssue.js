@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from'react-markdown';
+import remarkGfm from "remark-gfm";
 
 
 const Content=styled.div`
@@ -25,7 +26,7 @@ function MemoIssue({issueContent}){
     return(
         <>
             <Content>
-                <ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
                     {issueContent}
                 </ReactMarkdown>
             </Content>

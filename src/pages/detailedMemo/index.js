@@ -32,9 +32,7 @@ const MemoDetail=styled.div`
   padding: 60px;
   flex-wrap: wrap;
   gap: 20px;
-
   width: 75%;
-  
   color: #2B7697;
   font-size: 35px;
   background-color: #C1EBFE;

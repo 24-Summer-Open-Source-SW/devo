@@ -58,7 +58,7 @@ function JoinItems() {
           <p>TOKEN</p>
           <InputArea
             id="inputArea"
-            type="text"
+            type="password"
             placeholder="Token을 입력해주세요."
             value={token}
             onChange={(e) => settoken(e.target.value)}
@@ -89,7 +89,8 @@ const JoinBox = styled.div`
 
 const InputRange =styled.div`
   justify-content: end;
-  margin-top: 5rem;
+  margin-top: 3rem;
+
 `
 
 const InputBox = styled.div`
@@ -98,10 +99,12 @@ const InputBox = styled.div`
   justify-content: end;
   align-items: center;
   gap: 1rem;
-  margin-top: 2rem;
+  //margin-top: 2rem;
+
   p {
     font-weight: 900;
     font-size: 35px;
+    margin: 30px;
   }
 `;
 
@@ -119,7 +122,8 @@ const InputArea = styled.input`
 const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 10rem;
+  //margin-top: 10rem;
+  margin-top: 3rem;
   align-items: center;
 `;
 

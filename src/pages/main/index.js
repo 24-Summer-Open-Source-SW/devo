@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import LoginItems from "../../components/login/LoginItems";
 
@@ -31,13 +30,13 @@ function Main() {
   const ServiceIntro =styled.div`
   display: flex;
   text-align: center;
-  margin: 2rem;
+  margin: 1rem;
   font-size: 35px;
   font-weight: 500;
   `
 
   const MainBox = styled.div`
-  margin-top: 15rem;
+  //margin-top: 15rem;
   text-align: center;
   align-items: center;
   display: flex;

@@ -36,20 +36,12 @@ function AddMemo() {
         <Wrapper>
             <Link to={'/memo'}>
                 <MainBtn>
-                    <p>
-                        Dev_memo
-                    </p>
+                    Dev_memo
                 </MainBtn>
             </Link>
         </Wrapper>
         <Container>
             <ContentsBox>
-                {/* <IssueBox>
-                    <p>이슈 내용</p>
-                    <p>이슈 내용</p>
-                    <p>이슈 내용</p>
-                    <p>이슈 내용</p>
-                </IssueBox> */}
                 <InputBox>
                     <TitleInput
                         onChange={handleTitle}
@@ -82,19 +74,17 @@ const Container = styled.div`
     justify-content: center;
     font-size: 15px;
 `;
-const MainBtn = styled.div`
+const MainBtn = styled.button`
     background:#D4D4D4;
-    padding: 10px;
     width:250px;
     height: 65px;
     border-radius: 30px;
     text-align: center;
-    p{
-        font-weight: 800;
-        font-size: 35px;
-        padding: 5px;
-    }
-`;
+    font-weight: 800;
+    font-size: 35px;
+`
+
+
 const ContentsBox = styled.div`
     /* width: 1031px;
     height: 641px; */
